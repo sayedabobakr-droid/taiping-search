@@ -1,12 +1,12 @@
 window.onload =function(){
                 const isloggedin =localStorage.getItem("isloggedin")
                 if(isloggedin!=="true"){
-                    window.location.href= "login.html";                
+                    window.location.href= "index.html";                
                 }
             }
             function logout(){
                 localStorage.removeItem("isloggedin");
-                window.location.href="login.html";
+                window.location.href="index.html";
             }
     // بنستنى الصفحة تحمل بالكامل الأول
     document.addEventListener('DOMContentLoaded', function() {
