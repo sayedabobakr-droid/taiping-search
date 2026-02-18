@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="Icon" href="img/ch.png">
+</head>
+<body>
+    <div class="date">
+
+        <a href="google.html">
+            <button class="back">اغلاق</button>
+        </a>
+
+        <h3 class="fa">NAME: </h3>
+        <h3 class="fa">PASSWORD: </h3>
+        <h3 class="fa">PHONE: </h3>
+        <h3 class="fa">GMAIL: </h3>
+
+        <div class="logout" id="logout">
+            <button onclick="logout()">log out</button>
+        </div> 
+
+    </div>
+    
+    <script>
+         window.onload =function(){
+                const isloggedin =localStorage.getItem("isloggedin")
+                if(isloggedin!=="true"){
+                    window.location.href= "login.html";                
+                }
+            }
+            function logout(){
+                localStorage.removeItem("isloggedin");
+                window.location.href="login.html";
+            }
+    </script>
+</body>
+</html>

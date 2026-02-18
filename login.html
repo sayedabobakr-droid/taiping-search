@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="اهلا بكم في موقعي يمكنكم فعل ما تريدون">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="Icon" href="img/ch.png">
+</head>
+<body>
+    <form action="google.html" onsubmit="return validateForm(event)">
+        <label for="username">Name:</label>
+        <input type="text" id="username" name="username" placeholder="please Enter your name here">
+    
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password" placeholder="please Enter your password here">
+    
+        <label for="number">phone:</label>
+        <input type="number" id="number" name="number" placeholder="please Enter your phon number here">
+
+        <label for="email">email:</label>
+        <input type="email" id="email" name="email" placeholder="please Enter your email here">
+
+        <button type="submit">sent</button>
+
+        <script>
+            window.onload =function (){
+                const isloggedin =localStorage.getItem("isloggedin")
+                if (isloggedin ==="true") {
+                    window.location.href ="google.html";
+            }
+            }
+            function validateForm(event){
+            const name =document.getElementById("username").value;
+            const pass =document.getElementById("password").value;
+            const num =document.getElementById("number").value;
+            const ema =document.getElementById("email").value;
+
+            if(name=="" || pass=="" || num=="" || ema==""){
+                alert("please Enter all inputs");
+                event.preventDefault(); //لمنعه من الانتقال للصفحة التالية
+                return false;
+            }
+            localStorage.setItem("username", "name");
+
+            localStorage.setItem("isloggedin", "true")
+            return true;
+            }
+            
+        </script>
+    </form>    
+</body>
+</html>
